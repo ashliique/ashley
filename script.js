@@ -165,7 +165,7 @@ const scrapbookPages = [
     alt: 'A childhood photo by the sea in a green and pink outfit',
     frame: 'seaside',
     title: 'The seaside cutie',
-    caption: 'I wish I could ask you about this day by the sea. That smile makes me want to hear the whole story. And sorry for cropping bro out.'
+    caption: 'I wish I could ask you about this day by the sea. That smile makes me want to hear the whole story. And sorry for cropping lil alexander out 🙂.'
   },
   {
     image: 'assets/photos/silly-selfie.jpg',

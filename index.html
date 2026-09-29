@@ -7,8 +7,8 @@
     <meta name="description" content="A letter, a few reasons, and a scrapbook made for Ashley by Ash." />
     <title>For Ashley, always ♡</title>
     <link rel="icon" href="assets/heart.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=photo-frame-2" />
-    <script src="script.js?v=photo-frame-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=cover-heart-3" />
+    <script src="script.js?v=cover-heart-3" defer></script>
   </head>
   <body>
     <div class="page-shell">
@@ -94,7 +94,12 @@
                   <span class="cover-star cover-star-one" aria-hidden="true">✦</span>
                   <span class="cover-star cover-star-two" aria-hidden="true">✧</span>
                   <span class="cover-title"><span>a scrapbook for</span><strong>Ashley</strong></span>
-                  <span class="cover-corner" aria-hidden="true">♡</span>
+                  <button type="button" class="cover-corner" aria-label="Read the note hidden in the cover" aria-controls="cover-secret" aria-expanded="false">♡</button>
+                  <div class="cover-secret" id="cover-secret" role="note" aria-live="polite" hidden>
+                    <button type="button" class="cover-secret-close" aria-label="Close the hidden note">×</button>
+                    <p>I wish we were turning these pages together. I’d stop at every photo just to tell you why I love it.</p>
+                    <span>— Ash ♡</span>
+                  </div>
                   <button type="button" class="cover-open">Peek inside ♡</button>
                 </div>
               </div>

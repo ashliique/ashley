@@ -170,7 +170,7 @@ const scrapbookPages = [
   {
     image: 'assets/photos/silly-selfie.jpg',
     alt: 'A playful close-up selfie in purple light',
-    frame: 'three-four',
+    frame: 'portrait',
     title: 'The silly one',
     caption: 'I can almost hear you laughing when I look at this. I adore this playful side of you.'
   },

@@ -275,10 +275,34 @@ function turnTo(index) {
 
 nextPage.addEventListener('click', () => turnTo(pageIndex + 1));
 previousPage.addEventListener('click', () => turnTo(pageIndex - 1));
+
+function setCoverSecret(open) {
+  const heart = bookContent.querySelector('.cover-corner');
+  const note = bookContent.querySelector('#cover-secret');
+  if (!heart || !note) return;
+  note.hidden = !open;
+  heart.classList.toggle('is-open', open);
+  heart.textContent = open ? '♥' : '♡';
+  heart.setAttribute('aria-expanded', String(open));
+  heart.setAttribute('aria-label', open ? 'Hide the note in the cover' : 'Read the note hidden in the cover');
+}
+
 bookContent.addEventListener('click', (event) => {
-  if (event.target.closest('.cover-open')) turnTo(1);
+  if (event.target.closest('.cover-corner')) {
+    const note = bookContent.querySelector('#cover-secret');
+    setCoverSecret(note?.hidden ?? false);
+  } else if (event.target.closest('.cover-secret-close')) {
+    setCoverSecret(false);
+    bookContent.querySelector('.cover-corner')?.focus({ preventScroll: true });
+  } else if (event.target.closest('.cover-open')) {
+    turnTo(1);
+  }
 });
 scrapbookArea.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && bookContent.querySelector('#cover-secret:not([hidden])')) {
+    setCoverSecret(false);
+    bookContent.querySelector('.cover-corner')?.focus({ preventScroll: true });
+  }
   if (event.key === 'ArrowRight') {
     event.preventDefault();
     turnTo(pageIndex + 1);

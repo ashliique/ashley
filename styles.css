@@ -118,7 +118,15 @@ h1 em { color: var(--cherry); font-weight: 400; }
 .cover-star { position: absolute; z-index: 2; color: #fff5c8; text-shadow: 0 3px 10px rgba(31, 18, 40, .4); }
 .cover-star-one { top: 42px; right: 13%; font-size: 45px; transform: rotate(18deg); }
 .cover-star-two { right: 5%; bottom: 25%; font-size: 30px; transform: rotate(-15deg); }
-.cover-corner { position: absolute; z-index: 2; bottom: 33px; left: 40px; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #fff9e8; color: var(--cherry); font-size: 32px; transform: rotate(-12deg); box-shadow: 0 6px 18px rgba(47, 27, 49, .2); }
+.cover-corner { position: absolute; z-index: 5; bottom: 33px; left: 40px; display: grid; place-items: center; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 50%; background: #fff9e8; color: var(--cherry); font-size: 32px; transform: rotate(-12deg); box-shadow: 0 6px 18px rgba(47, 27, 49, .2); transition: transform .2s ease, background .2s ease; }
+.cover-corner:hover, .cover-corner.is-open { background: #ffedf1; transform: rotate(-12deg) scale(1.1); }
+.cover-secret { position: absolute; z-index: 4; left: 40px; bottom: 103px; width: min(330px, calc(100% - 80px)); padding: 25px 26px 18px; border: 2px solid #efc5ca; border-radius: 14px 14px 19px 7px; background: #fffaf0; color: var(--ink); box-shadow: 0 14px 30px rgba(47, 27, 49, .25); transform: rotate(-3deg); animation: secret-appear .3s ease both; }
+.cover-secret[hidden] { display: none; }
+.cover-secret::before { content: ''; position: absolute; top: -12px; left: calc(50% - 42px); width: 84px; height: 23px; background: rgba(245, 192, 176, .76); transform: rotate(3deg); }
+.cover-secret p { margin: 0 0 11px; font-family: 'Fraunces', Georgia, serif; font-size: 19px; line-height: 1.4; }
+.cover-secret > span { color: var(--cherry); font-family: 'Fraunces', Georgia, serif; font-size: 16px; font-style: italic; }
+.cover-secret-close { position: absolute; top: 4px; right: 7px; width: 31px; height: 31px; padding: 0; border: 0; background: transparent; color: var(--cherry); font-size: 24px; line-height: 1; }
+@keyframes secret-appear { from { opacity: 0; scale: .93; } to { opacity: 1; scale: 1; } }
 .cover-open { position: absolute; z-index: 3; right: 39px; bottom: 34px; border: 2px solid #fff8e8; border-radius: 100px; background: #fff8e8; color: #91445c; padding: 12px 22px; font-weight: 700; box-shadow: 0 6px 18px rgba(53, 22, 43, .25); }
 .cover-open:hover { background: white; transform: translateY(-3px); }
 .book-spread { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
@@ -185,6 +193,9 @@ h1 em { color: var(--cherry); font-weight: 400; }
   .cover-star-one { top: 220px; right: 11%; font-size: 27px; }
   .cover-star-two { right: auto; left: 10%; bottom: 120px; font-size: 21px; }
   .cover-corner { bottom: 32px; left: 22px; width: 39px; height: 39px; font-size: 23px; }
+  .cover-secret { left: 50%; bottom: 100px; width: min(295px, calc(100% - 30px)); padding: 23px 20px 17px; transform: translateX(-50%) rotate(-2deg); }
+  .cover-secret p { font-size: 17px; }
+  .cover-secret > span { font-size: 14px; }
   .cover-open { right: 50%; bottom: 30px; white-space: nowrap; padding: 10px 17px; font-size: 13px; transform: translateX(50%); }
   .cover-open:hover { transform: translateX(50%) translateY(-3px); }
   .book-cover::before { border-width: 5px; }

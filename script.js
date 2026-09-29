@@ -156,7 +156,7 @@ const scrapbookPages = [
   {
     image: 'assets/photos/childhood-smile.jpg',
     alt: 'A childhood photo with a playful sideways smile',
-    frame: 'portrait',
+    frame: 'three-four',
     title: 'Little mischief',
     caption: 'That sideways smile gets me every time. You look like you have a secret joke.'
   },

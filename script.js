@@ -19,7 +19,7 @@ const notes = [
   'You make my favorite moments feel even brighter.',
   'I hope something lovely finds you today. You deserve that.',
   'I’m so lucky I get to love you.',
-  'If I could, I’d send you a cup of tea and the longest hug.',
+  'If I could, I’d send you a cup of tea (not chai because unhealthy) and the longest hug.',
   'You are my favorite hello, every single time.',
   'Even from far away, you make my days feel warmer.',
   'I can’t wait for all the little everyday moments we’ll share.',
@@ -164,8 +164,8 @@ const scrapbookPages = [
     image: 'assets/photos/seaside-childhood.jpg',
     alt: 'A childhood photo by the sea in a green and pink outfit',
     frame: 'seaside',
-    title: 'A seaside day',
-    caption: 'I wish I could ask you about this day by the sea. That smile makes me want to hear the whole story.'
+    title: 'The seaside cutie',
+    caption: 'I wish I could ask you about this day by the sea. That smile makes me want to hear the whole story. And sorry for cropping bro out.'
   },
   {
     image: 'assets/photos/silly-selfie.jpg',
@@ -179,28 +179,28 @@ const scrapbookPages = [
     alt: 'A selfie with glasses and little heart decorations',
     frame: 'portrait',
     title: 'Your kind of magic',
-    caption: 'I love how you can make even a quick selfie feel playful and unmistakably yours.'
+    caption: 'I love your make-up, and how you made even a quick selfie feel playful and unmistakably yours.'
   },
   {
     image: 'assets/photos/cozy-onesie.jpg',
     alt: 'Ashley taking a mirror photo in her Rilakkuma onesie',
     frame: 'portrait',
-    title: 'Rilakkuma Ashley',
-    caption: 'I love this photo because you look so playful and cozy in your Rilakkuma onesie. I wish I could have been there to laugh with you.'
+    title: 'My favorite one',
+    caption: 'I love this photo because you look so playful and cozy in this onesie, and also for the other obvious reasons you know 😜.'
   },
   {
     image: 'assets/photos/peace-sign.jpg',
     alt: 'A selfie with glasses and a peace sign',
     frame: 'portrait',
-    title: 'A little hello',
-    caption: 'That peace sign feels like a hello sent straight to me. I always smile back.'
+    title: 'PEACE',
+    caption: 'Look at my girl being all sassy and not giving a shit... but hey, peace!'
   },
   {
     image: 'assets/photos/golden-glasses.jpg',
     alt: 'A close-up selfie with glasses in warm light',
     frame: 'portrait',
     title: 'When I miss you',
-    caption: 'I come back to this one when I miss you. It feels like a quiet hello, even from far away.'
+    caption: 'I come back to this one when I miss you. I just want to peck on your puckered lips ♡'
   }
 ];
 

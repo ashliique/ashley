@@ -4,9 +4,9 @@
   Leave it empty to use the site's shuffled letter instead.
 */
 window.AshleyDailyLetter = {
-  date: '', // Example: '2026-10-01'
+  date: '01.10.2026', // Example: '2026-10-01'
   paragraphs: [
-    // 'First paragraph for Ashley.',
-    // 'Another paragraph if you want one.'
+    'For today, I just love you and all the things you do.',
+    'You make me happy in the ways I didn't even know was possible.'
   ]
 };

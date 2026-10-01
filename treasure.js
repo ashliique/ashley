@@ -530,11 +530,10 @@
   function revealNote() {
     body.querySelector('audio')?.pause(); stopKisses();
     const datedLetter = window.AshleyDailyLetter;
-    const now = new Date();
-    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-    const personalLines = datedLetter?.date === today && Array.isArray(datedLetter.paragraphs)
-      ? datedLetter.paragraphs.map(line => String(line).trim()).filter(Boolean)
-      : [];
+    let personalLines = [];
+    if (typeof datedLetter === 'string') personalLines = datedLetter.split(/\n\s*\n/).map(line => line.trim()).filter(Boolean);
+    else if (typeof datedLetter?.message === 'string') personalLines = datedLetter.message.split(/\n\s*\n/).map(line => line.trim()).filter(Boolean);
+    else if (Array.isArray(datedLetter?.paragraphs)) personalLines = datedLetter.paragraphs.map(line => String(line).trim()).filter(Boolean);
     if (personalLines.length) round.note = personalLines;
     else if (!round.note) round.note = [fresh('note-openings', openings), fresh('note-middles', middles), fresh('note-endings', endings)];
     body.replaceChildren();

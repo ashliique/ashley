@@ -7,14 +7,20 @@
     <meta name="description" content="A letter, a few reasons, and a scrapbook made for Ashley by Ash." />
     <title>For Ashley, always ♡</title>
     <link rel="icon" href="assets/heart.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=cover-heart-3" />
-    <script src="script.js?v=cover-heart-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=visual-room-7" />
+    <link rel="stylesheet" href="treasure.css?v=visual-room-7" />
+    <link rel="stylesheet" href="together.css?v=remote-reaction-16" />
+    <script src="stickers.js?v=visual-room-7" defer></script>
+    <script src="together.js?v=remote-reaction-16" defer></script>
+    <script src="script.js?v=visual-room-7" defer></script>
+    <script src="daily-letter.js?v=daily-letter-1" defer></script>
+    <script src="treasure.js?v=room-fixes-13" defer></script>
   </head>
   <body>
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Back to the top">♡ <span>for Ashley</span></a>
-        <span class="header-note">I love you my potato ✦</span>
+        <span class="header-note">I love you, baby ✦</span>
       </header>
 
       <main id="top">
@@ -78,6 +84,35 @@
           </div>
         </section>
 
+        <section class="daily-section" aria-labelledby="daily-title">
+          <div class="section-heading">
+            <p class="eyebrow">psst, there’s more</p>
+            <h2 id="daily-title">I keep thinking of you.</h2>
+            <p>I can't show up at your door yet. I can leave you these.</p>
+          </div>
+          <div class="daily-grid">
+            <article class="together-card" id="together-card" aria-labelledby="together-title">
+              <div class="together-top"><span>if you were here...</span><time id="together-date"></time></div>
+              <h3 id="together-title">I saved you a spot.</h3>
+              <p class="together-intro">come sit. the rug has a tiny plan for you ♡</p>
+              <div class="together-scene" id="together-scene"></div>
+              <p class="together-whisper" id="together-whisper" role="status" aria-live="polite"></p>
+              <div class="together-actions" id="together-actions"></div>
+            </article>
+
+            <article class="treasure-card" id="treasure-card" aria-labelledby="treasure-title">
+              <div class="treasure-heading">
+                <button class="treasure-sticker" type="button" aria-label="Heart sticker">♡</button>
+                <p class="treasure-kicker">I might have hidden something</p>
+                <h3 id="treasure-title">Come find what I hid.</h3>
+                <p>I was going to hand you this. Then I got distracted.</p>
+              </div>
+              <div class="treasure-body" id="treasure-body"></div>
+              <p class="treasure-status" id="treasure-status" role="status" aria-live="polite"></p>
+            </article>
+          </div>
+        </section>
+
         <section class="album-section" aria-labelledby="album-title">
           <div class="section-heading">
             <p class="eyebrow">photos & stories</p>
@@ -120,7 +155,7 @@
         </section>
       </main>
 
-      <footer class="site-footer">Only for you baby, with love that reaches all the way from here to the moon and way beyond.<br />— your cutiecheeks ☾ <span aria-hidden="true">♡</span></footer>
+      <footer class="site-footer">Only for you, with love that reaches all the way from here to the moon and way beyond.<br />— your cutiecheeks ☾ <span aria-hidden="true">♡</span></footer>
     </div>
 
     <dialog class="letter-dialog" id="letter-dialog" aria-labelledby="letter-title">

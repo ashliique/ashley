@@ -530,40 +530,26 @@
   function revealNote() {
     body.querySelector('audio')?.pause(); stopKisses();
     const datedLetter = window.AshleyDailyLetter;
+    const archive = window.AshleyHuntLetters;
     let personalLines = [];
     if (typeof datedLetter === 'string') personalLines = datedLetter.split(/\n\s*\n/).map(line => line.trim()).filter(Boolean);
     else if (typeof datedLetter?.message === 'string') personalLines = datedLetter.message.split(/\n\s*\n/).map(line => line.trim()).filter(Boolean);
     else if (Array.isArray(datedLetter?.paragraphs)) personalLines = datedLetter.paragraphs.map(line => String(line).trim()).filter(Boolean);
     if (personalLines.length) round.note = personalLines;
     else if (!round.note) round.note = [fresh('note-openings', openings), fresh('note-middles', middles), fresh('note-endings', endings)];
+    const date = archive?.validDate(datedLetter?.date) ? datedLetter.date : archive?.today();
+    const emoji = typeof datedLetter?.emoji === 'string' ? datedLetter.emoji : '😘';
+    const corner = typeof datedLetter?.corner === 'string' ? datedLetter.corner : '✦';
+    archive?.save({ date, emoji, corner, paragraphs: round.note });
     body.replaceChildren();
     const paper = node('div', 'hunt-love-note');
-    paper.append(node('span', 'hunt-note-star', '✦'), node('p', 'hunt-note-address', '😘'));
+    paper.append(node('span', 'hunt-note-star', corner), node('p', 'hunt-note-address', emoji));
+    const dated = node('time', 'hunt-note-date', archive?.dateLabel(date) || date);
+    dated.dateTime = date;
+    paper.append(dated);
     round.note.forEach(line => paper.append(node('p', '', line)));
-    body.append(paper);
-    const secret = node('div', 'hunt-final-secret');
-    secret.hidden = true;
-    const secretButton = button('hunt-inspect', 'There is something on the back…', () => {
-      if (!round.lastSecret) {
-        const category = fresh('final-categories', Object.keys(secrets));
-        round.lastCategory = category;
-        round.lastSecret = fresh(`secret-${category}`, secrets[category]);
-      }
-      secret.replaceChildren();
-      if (round.lastCategory !== 'cartoon' || !round.doodle.lines) secret.append(node('p', '', round.lastSecret));
-      if (round.lastCategory === 'cartoon') {
-        const drawing = node('div');
-        drawDoodle(drawing);
-        secret.append(drawing);
-      }
-
-      secret.hidden = !secret.hidden;
-      secretButton.setAttribute('aria-expanded', String(!secret.hidden));
-      status.textContent = '';
-    });
-    secretButton.setAttribute('aria-expanded', 'false');
-    body.append(secretButton, secret, button('hunt-primary', 'Hide another one for me ↺', startRound));
-    status.textContent = 'You found my note. The hiding places will be different next time.';
+    body.append(paper, button('hunt-primary', 'Hide another one for me ↺', startRound));
+    status.textContent = 'You found my note. I saved it in the little drawer ♡';
     focusStage();
   }
   const start = node('div', 'hunt-start');

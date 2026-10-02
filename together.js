@@ -233,6 +233,55 @@
     const accents=document.createElement('div');accents.className='sofa-reveal-accents';accents.setAttribute('aria-hidden','true');accents.textContent=wide?'♫ ♡ ♪':'✦ ♡ ✦';p.append(accents);
     return openPopup(p,alt);
   }
+  function showLetterDrawer() {
+    const archive=window.AshleyHuntLetters;
+    const letters=archive?.entries()||[];
+    const p=panel('in the little drawer ♡');p.classList.add('sofa-letter-drawer');
+    const tabs=document.createElement('div');tabs.className='drawer-tabs';
+    const view=document.createElement('div');view.className='drawer-view';
+    const lettersTab=makeButton(`Letters · ${letters.length}`,showLetters);
+    const drawingTab=makeButton('Your Miku drawing',showDrawing);
+    tabs.append(lettersTab,drawingTab);p.append(tabs,view);
+
+    function select(tab) {
+      for(const button of [lettersTab,drawingTab])button.setAttribute('aria-pressed',String(button===tab));
+      view.replaceChildren();
+    }
+    function showLetters() {
+      select(lettersTab);
+      if(!letters.length){
+        const empty=document.createElement('p');empty.className='drawer-empty';
+        empty.textContent='The first letter will be here when you find it ♡';view.append(empty);return;
+      }
+      const list=document.createElement('div');list.className='drawer-letter-list';
+      letters.forEach(letter=>{
+        const item=makeButton('',()=>showSavedLetter(letter));item.classList.add('drawer-letter-choice');
+        const date=document.createElement('time');date.dateTime=letter.date;date.textContent=archive.dateLabel(letter.date);
+        const preview=document.createElement('span');preview.textContent=`${letter.emoji} ${letter.paragraphs[0]}`.trim();
+        item.append(date,preview);list.append(item);
+      });view.append(list);
+    }
+    function showSavedLetter(letter) {
+      select(lettersTab);
+      const back=makeButton('← All letters',showLetters);back.classList.add('drawer-back');view.append(back);
+      const paper=document.createElement('article');paper.className='drawer-saved-letter';
+      const corner=document.createElement('span');corner.className='drawer-letter-corner';corner.textContent=letter.corner;
+      const emoji=document.createElement('span');emoji.className='drawer-letter-emoji';emoji.textContent=letter.emoji;
+      const date=document.createElement('time');date.dateTime=letter.date;date.textContent=archive.dateLabel(letter.date);
+      paper.append(corner,emoji,date);
+      letter.paragraphs.forEach(line=>{const paragraph=document.createElement('p');paragraph.textContent=line;paper.append(paragraph);});
+      view.append(paper);
+    }
+    function showDrawing() {
+      select(drawingTab);
+      const frame=document.createElement('figure');frame.className='sofa-reveal-frame is-wide';
+      const img=document.createElement('img');img.src='assets/doodles/ashley-miku.jpg';
+      img.alt='Ashley’s drawing of Miku and two expressive green characters';img.className='sofa-reveal-photo';
+      frame.append(img);view.append(frame);
+    }
+    if(letters.length)showLetters();else showDrawing();
+    openPopup(p,'Letters and Ashley’s Miku drawing');
+  }
   function roomDetail(id) {
     whisper.textContent='';
     if(id==='hand'){
@@ -261,7 +310,7 @@
       roomBurst(345,32,['✿','♡']);photoReveal(id,'assets/doodles/'+visit.cat.file,visit.cat.alt);return;
     }
     if(id==='drawer'){
-      visit.drawer=true;draw();roomBurst(45,219,['♫','♡']);photoReveal(id,'assets/doodles/ashley-miku.jpg','Ashley’s drawing of Miku and two expressive green characters',true);return;
+      visit.drawer=true;draw();roomBurst(45,219,['♫','♡']);showLetterDrawer();return;
     }
     if(id==='cup'){
       roomBurst(339,287,['♡','✦']);const p=photoReveal(id,'assets/personal/shin-chan-cup.jpg','The Shin Chan cup Ashley recently bought');

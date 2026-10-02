@@ -6,7 +6,7 @@
 */
 window.AshleyDailyLetter = {
   date: '',
-  emoji: '😘',
+  emoji: '🥺',
   corner: '✦',
   message: `well, you found it... I want to tell you that it kills me to know that I've made you cry so many times in such a small time. I'm trying Ashley, I hope I stop being insensitive. Last thing I want to see is tears in your eyes. 
   

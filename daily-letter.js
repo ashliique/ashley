@@ -8,7 +8,7 @@ window.AshleyDailyLetter = {
   date: '',
   emoji: '🫩',
   corner: '♡',
-  message: I had like a 0.15 chance of getting it right, Ashley 😭 But wait, my lucky number,is it 11?? Don’t laugh at me if I’m wrong again 😭
+  message:`I had like a 0.15 chance of getting it right, Ashley 😭 But wait, my lucky number,is it 11?? Don’t laugh at me if I’m wrong again 😭
 
 And please get your headache checked love. My beautiful wife needs to be healthy so I can keep you with me forever. You’re smart, funny, caring, insanely pretty, and somehow you still manage to make me feel lucky every single day. I hate that such a lovely little head of yours gives you trouble sometimes. Take care of yourself 😘`
 };

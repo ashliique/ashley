@@ -6,9 +6,9 @@
 */
 window.AshleyDailyLetter = {
   date: '',
-  emoji: '🥺',
-  corner: '✦',
-  message: `well, you found it... I want to tell you that it kills me to know that I've made you cry so many times in such a small time. I'm trying Ashley, I hope I stop being insensitive. Last thing I want to see is tears in your eyes. 
-  
-  I'm sorry I've not been the boyfriend I want to be yet, but I am learning. I believe together we can grow into something beautiful.`
+  emoji: '🫩',
+  corner: '♡',
+  message: I had like a 0.15 chance of getting it right, Ashley 😭 and I wasn’t even making calculated guesses. But wait, my lucky number,is it 11?? Don’t laugh at me if I’m wrong again 😭
+
+And please get your headache checked love. My beautiful wife needs to be healthy so I can keep you with me forever. You’re smart, funny, caring, insanely pretty, and somehow you still manage to make me feel lucky every single day. I hate that such a lovely little head of yours gives you trouble sometimes. I love you way too much.`
 };

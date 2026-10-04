@@ -6,7 +6,9 @@
 */
 window.AshleyDailyLetter = {
   date: '',
-  emoji: '🫩',
+  emoji: '🥹',
   corner: '♡',
-  message: `Okay detective, please get your headache checked, love. My beautiful wife needs to be healthy so I can keep you with me forever. You’re smart, funny, caring, insanely pretty, and somehow you still manage to make me feel lucky every single day. I hate that such a lovely little head of yours gives you trouble sometimes. Take care of yourself 😘`
+  message: `Hi babie, I really love how complete you make me feel. It feels like verything I have been through was worth it. I'm an atheist yk but I'll literally thank all the 33 million Indian gods one by one for considering me worthy of your love. 
+
+I am rediscovering myself with you and I'm finding secrets that never really existed. You're very special to me. <3`
 };

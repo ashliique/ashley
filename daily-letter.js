@@ -6,7 +6,7 @@
 */
 window.AshleyDailyLetter = {
   date: '',
-  emoji: '🥹',
+  emoji: '😚',
   corner: '♡',
   message: `My love, you're the perfect creation of universe. There has been billions of years of random combinations of particles and anti particles to end up creating you. And you are perfect as you are. you don't need to hide anything about yourself to me. I love everything about you, always.
 
